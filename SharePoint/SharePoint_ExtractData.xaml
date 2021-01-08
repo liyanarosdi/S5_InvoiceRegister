@@ -1,7 +1,6 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ExtractData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
-    <x:Property Name="VendName" Type="OutArgument(x:String)" />
   </x:Members>
   <this:ExtractData.in_Config>
     <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
@@ -9,10 +8,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1366,3064</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1243,3338</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="54">
+    <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -43,10 +42,12 @@
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -74,6 +75,7 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -81,37 +83,35 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="714,2959" sap2010:WorkflowViewState.IdRef="Sequence_30">
+  <Sequence sap:VirtualizedContainerService.HintSize="738,3233" sap2010:WorkflowViewState.IdRef="Sequence_30">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="672,2867" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
+    <ui:BlockUserInput TimeoutMS="{x:Null}" BlockType="All" DisplayName="Block User Input" sap:VirtualizedContainerService.HintSize="696,3141" sap2010:WorkflowViewState.IdRef="BlockUserInput_1" KeyModifiers="Alt" SpecialKey="True">
       <ui:BlockUserInput.Body>
-        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="636,2741" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="660,3015" sap2010:WorkflowViewState.IdRef="Sequence_29">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="ExtractData" sap:VirtualizedContainerService.HintSize="594,2649" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence DisplayName="ExtractData" sap:VirtualizedContainerService.HintSize="618,2923" sap2010:WorkflowViewState.IdRef="Sequence_1">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
-              <Variable x:TypeArguments="x:String" Name="OutDT" />
-              <Variable x:TypeArguments="s:String[]" Name="RemoveText" />
-              <Variable x:TypeArguments="x:String" Name="RemoveFirst" />
               <Variable x:TypeArguments="x:String" Name="in_VedInc" />
               <Variable x:TypeArguments="x:String" Name="in_VedDate" />
               <Variable x:TypeArguments="x:String" Name="in_VedProNum" />
               <Variable x:TypeArguments="x:String" Name="in_VedCurr" />
               <Variable x:TypeArguments="x:String" Name="in_GST" />
-              <Variable x:TypeArguments="x:String" Name="in_NewNum" />
               <Variable x:TypeArguments="x:String" Name="in_VedName" />
               <Variable x:TypeArguments="x:String" Name="in_Name" />
               <Variable x:TypeArguments="x:String" Name="in_VedCode" />
               <Variable x:TypeArguments="x:String" Name="in_VedAcc" />
               <Variable x:TypeArguments="x:Double" Name="in_VedAmount" />
+              <Variable x:TypeArguments="s:String[]" Name="arrCol" />
+              <Variable x:TypeArguments="scg:List(sd:DataRow)" Name="EmptyRows" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -119,21 +119,21 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="552,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SharePoint_ExtractData Start&quot;]" />
-            <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear - SharePoint Webpage" sap:VirtualizedContainerService.HintSize="552,704" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="False">
+            <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="576,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SharePoint_ExtractData Start&quot;]" />
+            <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear - SharePoint Webpage" sap:VirtualizedContainerService.HintSize="576,334" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="False">
               <ui:OnUiElementAppear.Body>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,528" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'SGVIRTEST Page'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="b52755e6df1378fca6302a9580859e93" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;">
@@ -181,7 +181,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:OnUiElementAppear>
-            <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="552,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Remove">
+            <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table" sap:VirtualizedContainerService.HintSize="576,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Remove">
               <ui:FilterDataTable.Filters>
                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                   <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -194,232 +194,412 @@
                 </scg:List>
               </ui:FilterDataTable.SelectColumns>
             </ui:FilterDataTable>
-            <ui:WriteCell Cell="A1:Z9999" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="552,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="Data\Temp\SharePoint.xlsx">
+            <ui:WriteCell Cell="A1:Z9999" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="576,115" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" WorkbookPath="Data\Temp\SharePoint.xlsx">
               <ui:WriteCell.Text>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:WriteCell.Text>
             </ui:WriteCell>
-            <ui:WriteRange AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="552,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Temp\SharePoint.xlsx" />
-            <ui:WriteCell Cell="R1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="552,115" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="ID" WorkbookPath="Data\Temp\SharePoint.xlsx" />
-            <ui:ReadRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="552,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1" SheetName="Sheet1" WorkbookPath="Data\Temp\SharePoint.xlsx" />
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="552,457" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:WriteRange AddHeaders="False" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="576,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Data\Temp\SharePoint.xlsx" />
+            <ui:WriteCell Cell="R1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="576,115" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="ID" WorkbookPath="Data\Temp\SharePoint.xlsx" />
+            <ui:ReadRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A1" SheetName="Sheet1" WorkbookPath="Data\Temp\SharePoint.xlsx" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="576,1200" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1053" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="VedAmount" />
+                    </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_11">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:String" Name="VedAmount" />
-                      </Sequence.Variables>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="s:String[]">[arrCol]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="s:String[]">[{"Name", "Project Num11", "Expense Code", "Vendor Name", "Vendor Name:Vendor Account", "Vendor Invoice Number", "Vendor Invoice Date", "Vendor Invoice Currency", "Vendor Invoice Amount", "GST Treatment"}]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:CommentOut.Body>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Name" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_22">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="f83ca927c37b56d414b725189dd01dfc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='6' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedName]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Account" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_8">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="387a254dde58e375e87f6d1138e83fca" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='7' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedAcc]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Invoice" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_9">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="71b085fdbfd0e3a9c7e2adf3539624fc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='8' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedInc]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Invoice Date" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_10">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="cc15bbf64eb80a5db826ebdefb6d13ff" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' parentname='aspnetForm' tableCol='9' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedDate]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Invoice Currency" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_11">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="f95fca4a3256ccf49ac5e9ec3e182d7f" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='10' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedCurr]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Total Invoice Amount" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="abbd402fa24501628b6bd04236637c88" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' parentname='aspnetForm' tableCol='11' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[VedAmount]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Project Number" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_13">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="9f9da8458872d0662b71c2870c34dc12" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tag='TD' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedProNum]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - GST Treatment" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_14">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="7f9b20c3563edb315863510f77b9d86d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='12' tag='TD' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_GST]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Name" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_23">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="1504ba3d45af6b670f69a52d029167eb" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='2' tag='TD' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_Name]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Expense Code" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_24">
-                        <ui:GetValue.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="f6beddc3db417cac4c422c956af8077d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='4' tag='TD' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:GetValue.Target>
-                        <ui:GetValue.Value>
-                          <OutArgument x:TypeArguments="x:String">[in_VedCode]</OutArgument>
-                        </ui:GetValue.Value>
-                      </ui:GetValue>
-                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;Code: &quot; + in_VedCode]" />
-                      <If Condition="[VedAmount = Nothing]" sap:VirtualizedContainerService.HintSize="484,401" sap2010:WorkflowViewState.IdRef="If_1">
-                        <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,156" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="Assign_12">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="scg:List(sd:DataRow)">[EmptyRows]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="scg:List(sd:DataRow)" xml:space="preserve">[(From d In ExtractDataTable.AsEnumerable
+Where arrCol.Any(Function (x)  If(isNothing(d(x)), True, String.IsNullOrWhiteSpace(d(x).toString.trim)))
+Select d).toList]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="755,299" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If Condition="[EmptyRows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="713,207" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If.Then>
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Error&quot;]" />
+                            </If.Then>
+                            <If.Else>
+                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Correct&quot;]" />
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="418,1219" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,1127" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="VedAmount" />
+                            </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="x:Double">[in_VedAmount]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(VedAmount)]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;Amount: &quot; + in_VedAmount.ToString]" />
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Name" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_22">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="f83ca927c37b56d414b725189dd01dfc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='6' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedName]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Account" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_8">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="387a254dde58e375e87f6d1138e83fca" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='7' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedAcc]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Invoice" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_9">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="71b085fdbfd0e3a9c7e2adf3539624fc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='8' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedInc]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Invoice Date" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_10">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="cc15bbf64eb80a5db826ebdefb6d13ff" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' parentname='aspnetForm' tableCol='9' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedDate]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Vendor Invoice Currency" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_11">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="f95fca4a3256ccf49ac5e9ec3e182d7f" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='10' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedCurr]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Total Invoice Amount" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_12">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="abbd402fa24501628b6bd04236637c88" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' parentname='aspnetForm' tableCol='11' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[VedAmount]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Project Number" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_13">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="9f9da8458872d0662b71c2870c34dc12" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tag='TD' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedProNum]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - GST Treatment" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="GetValue_14">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="7f9b20c3563edb315863510f77b9d86d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' isleaf='1' parentname='aspnetForm' tableCol='12' tag='TD' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_GST]</OutArgument>
+                              </ui:GetValue.Value>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Name" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_23">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="1504ba3d45af6b670f69a52d029167eb" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='2' tag='TD' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_Name]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Expense Code" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_24">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dc34d59a-c0f0-4cab-9f78-37bace73c7bc" InformativeScreenshot="f6beddc3db417cac4c422c956af8077d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl parentname='aspnetForm' tableCol='4' tag='TD' /&gt;">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="x:String">[in_VedCode]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
                           </Sequence>
-                        </If.Else>
-                      </If>
-                      <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_7">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[VendName]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[in_VedName]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Process workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AX\AX_RPAJournal.xaml">
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                    <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text - Total Invoice Amount" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="GetValue_25">
+                      <ui:GetValue.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b539251-0b6d-44b3-b07a-29174bdd8f9a" InformativeScreenshot="abbd402fa24501628b6bd04236637c88" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='onetidDoclibViewTbl0' tag='TABLE' /&gt;&lt;webctrl idx='1' parentname='aspnetForm' tableCol='11' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:GetValue.Target>
+                      <ui:GetValue.Value>
+                        <OutArgument x:TypeArguments="x:String">[VedAmount]</OutArgument>
+                      </ui:GetValue.Value>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:GetValue>
+                    <If Condition="[VedAmount = Nothing]" sap:VirtualizedContainerService.HintSize="484,299" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Double">[in_VedAmount]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(VedAmount)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Process workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="AX\AX_RPAJournal.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
-                        <InOutArgument x:TypeArguments="x:Double" x:Key="io_VedAmount">[in_VedAmount]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedProNum">[in_VedProNum]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedDate">[in_VedDate]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedInc">[in_VedInc]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedCurr">[in_VedCurr]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_GST">[in_GST]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_NewNum">[in_NewNum]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedName">[in_VedName]</InOutArgument>
-                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedCode">[in_VedCode]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_Name">[in_Name]</InOutArgument>
-                        <InOutArgument x:TypeArguments="x:String" x:Key="io_VedAcc">[in_VedAcc]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Double" x:Key="io_VedAmount">
+                          <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="in_VedAmount" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedProNum">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Project Num11&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedDate">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Invoice Date&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedInc">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Invoice Number&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedCurr">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Invoice Currency&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_GST">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;GST Treatment&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedName">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Name&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedCode">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Expense Code&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_Name">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Name&quot;).ToString" />
+                        </InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="io_VedAcc">
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Name:Vendor Account&quot;).ToString" />
+                        </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Close workflow" sap:VirtualizedContainerService.HintSize="552,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="AX\AX_Close.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Close workflow" sap:VirtualizedContainerService.HintSize="576,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="AX\AX_Close.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SharePoint_Close workflow" sap:VirtualizedContainerService.HintSize="552,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SharePoint\SharePoint_Close.xaml">
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SharePoint_Close workflow" sap:VirtualizedContainerService.HintSize="576,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SharePoint\SharePoint_Close.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <scg:Dictionary x:TypeArguments="x:String, Argument" />
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="552,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Completed&quot;]" />
-            <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="552,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SharePoint_ExtractData End&quot;]" />
+            <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="576,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SharePoint_ExtractData End&quot;]" />
           </Sequence>
         </Sequence>
       </ui:BlockUserInput.Body>
