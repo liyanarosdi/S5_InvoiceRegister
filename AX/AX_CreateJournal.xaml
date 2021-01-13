@@ -12,11 +12,16 @@
     <x:Property Name="io_VedCode" Type="InOutArgument(x:String)" />
     <x:Property Name="io_VedAcc" Type="InOutArgument(x:String)" />
     <x:Property Name="io_NewJournalNo" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_ErrorInfo" Type="InOutArgument(x:String)" />
+    <x:Property Name="io_DataEmpty" Type="InArgument(x:String)" />
+    <x:Property Name="io_ETD" Type="InArgument(x:String)" />
+    <x:Property Name="io_PortName" Type="InArgument(x:String)" />
+    <x:Property Name="io_StakeHolder" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1306,8980</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1306,8979</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AX_CreateJournal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -75,6 +80,7 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -82,13 +88,13 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="960,8875" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap:VirtualizedContainerService.HintSize="960,8874" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="918,8783" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="918,8782" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence DisplayName="AX_CreateJournal" sap:VirtualizedContainerService.HintSize="880,6826" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
@@ -691,10 +697,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="884,1647" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="884,1646" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -702,7 +708,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="518,1578" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <Sequence sap:VirtualizedContainerService.HintSize="518,1577" sap2010:WorkflowViewState.IdRef="Sequence_15">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -716,7 +722,7 @@
                   <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath" />
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,1203" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,1202" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -820,9 +826,53 @@
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2de29fcc-45ce-4bf5-9d1f-dd1ad23ae0e1" InformativeScreenshot="dcb574c06fb99d6f712288c2c31215e1" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Vendor invoice registration (1 - sppa)' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;" TimeoutMS="4000" WaitForReady="COMPLETE" />
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Error workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SharePoint\SharePoint_Error.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Error workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="SharePoint\SharePoint_Error.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_ErrorInfo">
+                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_ErrorInfo" />
+                    </InOutArgument>
+                    <InArgument x:TypeArguments="x:Double" x:Key="io_VedAmount">
+                      <mva:VisualBasicValue x:TypeArguments="x:Double" ExpressionText="io_VedAmount" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedProNum">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedProNum" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedDate">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedDate" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedInc">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedInc" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCurr">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedCurr" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_GST">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_GST" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedName">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedName" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCode">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedCode" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedAcc">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedAcc" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_Name">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Name" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_DataEmpty">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_DataEmpty" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_ETD">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ETD" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_PortName">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_PortName" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StakeHolder">
+                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StakeHolder" />
+                    </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>

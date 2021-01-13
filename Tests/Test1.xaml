@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test1" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1038,893" sap2010:WorkflowViewState.IdRef="Test1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test1" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="870,1480" sap2010:WorkflowViewState.IdRef="Test1_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="37">
+    <scg:List x:TypeArguments="x:String" Capacity="74">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -38,10 +38,12 @@
       <x:String>UiPath.OCR.Contracts</x:String>
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -73,18 +75,22 @@
       <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="478,788" sap2010:WorkflowViewState.IdRef="Sequence_119">
+  <Sequence sap:VirtualizedContainerService.HintSize="518,1375" sap2010:WorkflowViewState.IdRef="Sequence_119">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Tes" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="Axpanewnd" />
+      <Variable x:TypeArguments="x:String" Name="NewTes" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_53">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_53">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_118">
           <sap:WorkflowViewStateService.ViewState>
@@ -3427,7 +3433,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,304" sap2010:WorkflowViewState.IdRef="CommentOut_54">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_54">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_120">
           <sap:WorkflowViewStateService.ViewState>
@@ -3449,23 +3455,204 @@
           </ui:SetValue>
         </Sequence>
       </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_56">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,156" sap2010:WorkflowViewState.IdRef="Sequence_122">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,64" sap2010:WorkflowViewState.IdRef="Assign_15">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Tes]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">Error encountered, please check the following:
+1. Expense code error, could be project code error
+2. GST Treatment blank
+3. Currency code blank
+4. Invoice amount blank
+5. Invoice date blank</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_55">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_121">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Tes]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Tes.Replace("/",".")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_57">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_125">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetFullText IgnoreHidden="{x:Null}" DisplayName="Get Full Text 'table  Grid'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_5">
+            <ui:GetFullText.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5a7b4999-0710-4131-b630-ba602a0552ac" InformativeScreenshot="d57858f5c11e1dc151f783cc5920b603" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Expense forecast (1 - sppa) - Invoice registration: 00014230_062' /&gt;&lt;wnd aaname='JSS_ProjForecastCost' cls='AxPaneWnd' /&gt;&lt;wnd cls='AxPaneWnd' aastate='focusable' idx='2' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:GetFullText.Target>
+            <ui:GetFullText.Text>
+              <OutArgument x:TypeArguments="x:String">[Tes]</OutArgument>
+            </ui:GetFullText.Text>
+          </ui:GetFullText>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_58">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_126">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_124">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window '192168183 Tscshellc'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="e3eb69678f0524c2ac5849572230ef0e" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Expense forecast (1 - sppa) - Invoice registration: 00014230_062' /&gt;">
+              <ui:WindowScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'AxPaneWnd'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_2">
+                      <ui:GetVisibleText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c6d38ef8-773a-40b7-abf9-10d576d60180" InformativeScreenshot="e13517f9ce7b0342c8010665ce11a775" Selector="&lt;wnd aaname='JSS_ProjForecastCost' cls='AxPaneWnd' /&gt;&lt;wnd cls='AxPaneWnd' idx='1' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:GetVisibleText.Target>
+                      <ui:GetVisibleText.Text>
+                        <OutArgument x:TypeArguments="ui:GenericValue">[Axpanewnd]</OutArgument>
+                      </ui:GetVisibleText.Text>
+                    </ui:GetVisibleText>
+                  </Sequence>
+                </ActivityAction>
+              </ui:WindowScope.Body>
+            </ui:WindowScope>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Sequence DisplayName="Screen Scraping" sap:VirtualizedContainerService.HintSize="476,436" sap2010:WorkflowViewState.IdRef="Sequence_128">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window '192168183 Tscshellc'" sap:VirtualizedContainerService.HintSize="434,344" sap2010:WorkflowViewState.IdRef="WindowScope_3" InformativeScreenshot="0f500bf8d9ed7450891e6e42d75823d8" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Vendor invoice registration (1 - sppa)' /&gt;">
+        <ui:WindowScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_127">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:GetVisibleText WordsInfo="{x:Null}" DisplayName="Get Visible Text 'AxPaneWnd'" FormattedText="False" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetVisibleText_3">
+                <ui:GetVisibleText.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="53127935-01a2-41d8-9ecd-649a58d748ba" InformativeScreenshot="049ae9880f64231904857ffbc91654d5" Selector="&lt;wnd aaname='JSS_VendInvRegistration' cls='AxPaneWnd' /&gt;&lt;wnd cls='AxPaneWnd' idx='2' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:GetVisibleText.Target>
+                <ui:GetVisibleText.Text>
+                  <OutArgument x:TypeArguments="ui:GenericValue">[Axpanewnd]</OutArgument>
+                </ui:GetVisibleText.Text>
+              </ui:GetVisibleText>
+            </Sequence>
+          </ActivityAction>
+        </ui:WindowScope.Body>
+      </ui:WindowScope>
+    </Sequence>
+    <Assign sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_18">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[Tes]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[NewTes]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">23/01/2021</InArgument>
+        <InArgument x:TypeArguments="x:String">[Axpanewnd.ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="436,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+    <Assign sap:VirtualizedContainerService.HintSize="476,60" sap2010:WorkflowViewState.IdRef="Assign_17">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[Tes]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[NewTes]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[Tes.Replace("/",".")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[NewTes.Replace("D0","")]</InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="436,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[Tes]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="476,61" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[NewTes]" />
   </Sequence>
 </Activity>

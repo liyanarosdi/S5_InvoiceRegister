@@ -12,11 +12,14 @@
     <x:Property Name="io_VedAcc" Type="InArgument(x:String)" />
     <x:Property Name="io_Name" Type="InArgument(x:String)" />
     <x:Property Name="io_DataEmpty" Type="InArgument(x:String)" />
+    <x:Property Name="io_ETD" Type="InArgument(x:String)" />
+    <x:Property Name="io_PortName" Type="InArgument(x:String)" />
+    <x:Property Name="io_StakeHolder" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1375,1515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1306,1513</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AX_Error_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -79,7 +82,6 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -87,13 +89,13 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="1041,1410" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="1041,1408" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[io_VedAcc = Nothing Or io_VedCode = Nothing Or io_GST = Nothing Or io_VedCurr = Nothing Or io_Name = Nothing Or io_VedProNum = Nothing Or io_VedDate = Nothing Or io_VedInc = Nothing Or io_VedName = Nothing Or io_VedAmount = Nothing Or io_ErrorInfo = Nothing]" sap:VirtualizedContainerService.HintSize="999,1318" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[io_VedAcc = Nothing Or io_VedCode = Nothing Or io_GST = Nothing Or io_VedCurr = Nothing Or io_Name = Nothing Or io_VedProNum = Nothing Or io_VedDate = Nothing Or io_VedInc = Nothing Or io_VedName = Nothing Or io_VedAmount = Nothing Or io_ETD = Nothing Or io_PortName = Nothing Or io_StakeHolder = Nothing]" sap:VirtualizedContainerService.HintSize="999,1316" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
