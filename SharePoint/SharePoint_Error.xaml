@@ -1,7 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="AX_Error" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="io_ErrorInfo" Type="InOutArgument(x:String)" />
-    <x:Property Name="io_VedAmount" Type="InArgument(x:Double)" />
+    <x:Property Name="io_VedAmount" Type="InArgument(x:String)" />
     <x:Property Name="io_VedProNum" Type="InArgument(x:String)" />
     <x:Property Name="io_VedDate" Type="InArgument(x:String)" />
     <x:Property Name="io_VedInc" Type="InArgument(x:String)" />
@@ -15,11 +15,12 @@
     <x:Property Name="io_ETD" Type="InArgument(x:String)" />
     <x:Property Name="io_PortName" Type="InArgument(x:String)" />
     <x:Property Name="io_StakeHolder" Type="InArgument(x:String)" />
+    <x:Property Name="io_ExistCode" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1306,1513</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1031,1604</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AX_Error_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -89,13 +90,48 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="1041,1408" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="1041,1499" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[io_VedAcc = Nothing Or io_VedCode = Nothing Or io_GST = Nothing Or io_VedCurr = Nothing Or io_Name = Nothing Or io_VedProNum = Nothing Or io_VedDate = Nothing Or io_VedInc = Nothing Or io_VedName = Nothing Or io_VedAmount = Nothing Or io_ETD = Nothing Or io_PortName = Nothing Or io_StakeHolder = Nothing]" sap:VirtualizedContainerService.HintSize="999,1316" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="999,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'Intermediate D3D Window'" sap:VirtualizedContainerService.HintSize="434,259" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_3" RepeatForever="False">
+            <ui:OnUiElementAppear.Body>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:OnUiElementAppear.Body>
+            <ui:OnUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ebef541c-a256-4801-a607-69b3d94ca081" InformativeScreenshot="243206a16ad2a34f7b67258461a9debe" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='SG VIR 2021 - RPA_Journal - Google Chrome' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:OnUiElementAppear.Target>
+          </ui:OnUiElementAppear>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <If Condition="[io_VedAcc = Nothing Or io_VedCode = Nothing Or io_GST = Nothing Or io_VedCurr = Nothing Or io_Name = Nothing Or io_VedProNum = Nothing Or io_VedDate = Nothing Or io_VedInc = Nothing Or io_VedName = Nothing Or io_VedAmount = Nothing Or io_ETD = Nothing Or io_PortName = Nothing Or io_StakeHolder = Nothing Or io_ExistCode = Nothing]" sap:VirtualizedContainerService.HintSize="999,1316" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,7 +158,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a4e88c9-f05e-4817-b5d3-bf177176abb6" InformativeScreenshot="d3a0d0a88f3d18b3babd111d6ec23cfc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl tag='A' aaname='Open Menu' tableCol='2' tableRow='3' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a4e88c9-f05e-4817-b5d3-bf177176abb6" InformativeScreenshot="d3a0d0a88f3d18b3babd111d6ec23cfc" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl tag='A' aaname='Open Menu' tableCol='2' tableRow='3' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -141,22 +177,22 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="277e070c-fe49-4d80-9688-918f4f7fa91b" InformativeScreenshot="a7c96a092f60dacf7a299ff6735be18d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl aaname='Edit Properties' parentid='ID_EditProperties' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="277e070c-fe49-4d80-9688-918f4f7fa91b" InformativeScreenshot="a7c96a092f60dacf7a299ff6735be18d" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl tag='A' aaname='Edit Properties' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text - Error Info" sap:VirtualizedContainerService.HintSize="435,134" sap2010:WorkflowViewState.IdRef="SetValue_2" Text="[io_DataEmpty]">
-            <ui:SetValue.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3062cf59-0f2a-41b8-80ef-c88241c3d260" InformativeScreenshot="1050d4a01be8852639e04a0d0cde8caf" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='RPA Remarks' tag='TEXTAREA' /&gt;" WaitForReady="COMPLETE">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'TEXTAREA '" EmptyField="True" sap:VirtualizedContainerService.HintSize="435,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[io_DataEmpty]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fa545ef-fe90-4c5f-bd6b-997a7b8996e4" InformativeScreenshot="59b6343d15e5c09c7f9f27805412da7c" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='RPA Remarks' tag='TEXTAREA' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
-            </ui:SetValue.Target>
-          </ui:SetValue>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
           <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="435,402" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_2" RepeatForever="False">
             <ui:OnUiElementAppear.Body>
               <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,226" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -180,7 +216,7 @@
                     </scg:List>
                   </ui:SelectItem.Items>
                   <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6241bb28-ad25-4996-9f29-e5c853cfafd5" InformativeScreenshot="4b0949e94798f6d5cedebade18ad149f" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Posted in AX?' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6241bb28-ad25-4996-9f29-e5c853cfafd5" InformativeScreenshot="4b0949e94798f6d5cedebade18ad149f" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Posted in AX?' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -190,7 +226,7 @@
               </Sequence>
             </ui:OnUiElementAppear.Body>
             <ui:OnUiElementAppear.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5b0f5d9-97b7-4e3b-852d-e2deb7442d3a" InformativeScreenshot="bce3636b6c03c883a381be26c4ea9cef" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' tag='DIV' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5b0f5d9-97b7-4e3b-852d-e2deb7442d3a" InformativeScreenshot="bce3636b6c03c883a381be26c4ea9cef" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' tag='DIV' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -218,7 +254,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ceff2c8-b89e-4126-bc60-3760a622d803" InformativeScreenshot="2dd4ddbc67de88f0cbd2934278314146" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Save' id='ctl00_m_g_1f214a1e_be07_4127_928c_8aba5fd4ec81_ctl00_ctl02_ctl00*' tag='INPUT' type='button' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ceff2c8-b89e-4126-bc60-3760a622d803" InformativeScreenshot="2dd4ddbc67de88f0cbd2934278314146" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Save' id='ctl00_m_g_*_ctl00_ctl02_ctl00*' tag='INPUT' type='button' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -248,7 +284,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a4e88c9-f05e-4817-b5d3-bf177176abb6" InformativeScreenshot="d3a0d0a88f3d18b3babd111d6ec23cfc" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl tag='A' aaname='Open Menu' tableCol='2' tableRow='3' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3a4e88c9-f05e-4817-b5d3-bf177176abb6" InformativeScreenshot="d3a0d0a88f3d18b3babd111d6ec23cfc" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl tag='A' aaname='Open Menu' tableCol='2' tableRow='3' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -267,22 +303,22 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="277e070c-fe49-4d80-9688-918f4f7fa91b" InformativeScreenshot="a7c96a092f60dacf7a299ff6735be18d" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl aaname='Edit Properties' parentid='ID_EditProperties' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="277e070c-fe49-4d80-9688-918f4f7fa91b" InformativeScreenshot="a7c96a092f60dacf7a299ff6735be18d" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl aaname='Edit Properties' parentid='ID_EditProperties' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:SetValue AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Set Text - Error Info" sap:VirtualizedContainerService.HintSize="435,134" sap2010:WorkflowViewState.IdRef="SetValue_1" Text="[io_ErrorInfo]">
-            <ui:SetValue.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3062cf59-0f2a-41b8-80ef-c88241c3d260" InformativeScreenshot="1050d4a01be8852639e04a0d0cde8caf" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='RPA Remarks' tag='TEXTAREA' /&gt;" WaitForReady="COMPLETE">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'TEXTAREA '" EmptyField="True" sap:VirtualizedContainerService.HintSize="435,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[io_ErrorInfo]">
+            <ui:TypeInto.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4fa545ef-fe90-4c5f-bd6b-997a7b8996e4" InformativeScreenshot="59b6343d15e5c09c7f9f27805412da7c" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='RPA Remarks' tag='TEXTAREA' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
               </ui:Target>
-            </ui:SetValue.Target>
-          </ui:SetValue>
+            </ui:TypeInto.Target>
+          </ui:TypeInto>
           <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear 'DIV'" sap:VirtualizedContainerService.HintSize="435,402" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_1" RepeatForever="False">
             <ui:OnUiElementAppear.Body>
               <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="401,226" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -306,7 +342,7 @@
                     </scg:List>
                   </ui:SelectItem.Items>
                   <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6241bb28-ad25-4996-9f29-e5c853cfafd5" InformativeScreenshot="4b0949e94798f6d5cedebade18ad149f" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Posted in AX?' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6241bb28-ad25-4996-9f29-e5c853cfafd5" InformativeScreenshot="4b0949e94798f6d5cedebade18ad149f" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Posted in AX?' tag='SELECT' /&gt;" WaitForReady="COMPLETE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -316,7 +352,7 @@
               </Sequence>
             </ui:OnUiElementAppear.Body>
             <ui:OnUiElementAppear.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5b0f5d9-97b7-4e3b-852d-e2deb7442d3a" InformativeScreenshot="bce3636b6c03c883a381be26c4ea9cef" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' tag='DIV' /&gt;">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a5b0f5d9-97b7-4e3b-852d-e2deb7442d3a" InformativeScreenshot="bce3636b6c03c883a381be26c4ea9cef" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' tag='DIV' /&gt;">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -344,7 +380,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ceff2c8-b89e-4126-bc60-3760a622d803" InformativeScreenshot="2dd4ddbc67de88f0cbd2934278314146" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Save' id='ctl00_m_g_1f214a1e_be07_4127_928c_8aba5fd4ec81_ctl00_ctl02_ctl00*' tag='INPUT' type='button' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2ceff2c8-b89e-4126-bc60-3760a622d803" InformativeScreenshot="2dd4ddbc67de88f0cbd2934278314146" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl src='https://gbsc.s5asia.com/_layouts/listform.aspx?PageType=6&amp;amp;ListId*' tag='IFRAME' /&gt;&lt;webctrl aaname='Save' id='ctl00_m_g_*_ctl00_ctl02_ctl00*' tag='INPUT' type='button' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>

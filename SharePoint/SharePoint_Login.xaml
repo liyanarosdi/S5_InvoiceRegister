@@ -128,7 +128,7 @@
             <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="942,22" sap2010:WorkflowViewState.IdRef="MaximizeWindow_1" />
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Chrome_RenderWidgetHost...'" sap:VirtualizedContainerService.HintSize="942,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="659f4956-7374-49f4-8932-f5717be60dee" InformativeScreenshot="7c5c4513932f90ab5084e9fc408e2615" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://gbsc.s5asia.com/SG VIR TEST/Forms/RPA_Journal.aspx - Goo*' /&gt;&lt;wnd aaname='Horizontal' cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="659f4956-7374-49f4-8932-f5717be60dee" InformativeScreenshot="7c5c4513932f90ab5084e9fc408e2615" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://gbsc.s5asia.com/SG VIR */Forms/RPA_Journal.aspx - Goo*' /&gt;&lt;wnd aaname='Horizontal' cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -143,7 +143,7 @@
                 <PickBranch.Trigger>
                   <ui:UiElementExists DisplayName="Element Exists 'pane'" Exists="[oNotSuccess]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c03cb30f-5fe0-49f6-a4cb-8e1b2a64282a" InformativeScreenshot="f6cbe035c10ff082df2f1860f398ebce" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl parentid='s4-titlerow' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tag='TD' /&gt;">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c03cb30f-5fe0-49f6-a4cb-8e1b2a64282a" InformativeScreenshot="f6cbe035c10ff082df2f1860f398ebce" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl parentid='s4-titlerow' tag='TABLE' /&gt;&lt;webctrl tableCol='2' tag='TD' /&gt;">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>

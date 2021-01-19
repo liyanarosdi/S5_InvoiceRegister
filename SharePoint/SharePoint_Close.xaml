@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SharePoint_Close" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1243,863" sap2010:WorkflowViewState.IdRef="SharePoint_Close_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SharePoint_Close" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="779,863" sap2010:WorkflowViewState.IdRef="SharePoint_Close_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -73,7 +73,7 @@
               </ui:CursorPosition>
             </ui:Click.CursorPosition>
             <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64307d00-1b37-45ca-b6a4-6a36fac2eb67" InformativeScreenshot="ec9b3bba720089090975440ea59ae66e" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - *' /&gt;&lt;webctrl parentid='zz9_Menu*' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64307d00-1b37-45ca-b6a4-6a36fac2eb67" InformativeScreenshot="ec9b3bba720089090975440ea59ae66e" Selector="&lt;html app='chrome.exe' title='SG VIR * - *' /&gt;&lt;webctrl parentid='zz9_Menu*' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
                   <InArgument x:TypeArguments="x:Int32" />
                 </ui:Target.TimeoutMS>
@@ -83,7 +83,7 @@
         </Sequence>
       </ui:OnUiElementAppear.Body>
       <ui:OnUiElementAppear.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd30b09a-3b1b-4421-ac48-4ec9d441f913" InformativeScreenshot="2d003f209a55084ef5a48404032b4266" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='SG VIR TEST - * - Google Chrome' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd30b09a-3b1b-4421-ac48-4ec9d441f913" InformativeScreenshot="2d003f209a55084ef5a48404032b4266" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='SG VIR * - * - Google Chrome' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -105,7 +105,7 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64307d00-1b37-45ca-b6a4-6a36fac2eb67" InformativeScreenshot="9960e8bc60801cd717e4b08f5a0e6f43" Selector="&lt;html app='chrome.exe' title='SG VIR TEST - RPA_Journal' /&gt;&lt;webctrl id='zz7_ID_Logout' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="64307d00-1b37-45ca-b6a4-6a36fac2eb67" InformativeScreenshot="9960e8bc60801cd717e4b08f5a0e6f43" Selector="&lt;html app='chrome.exe' title='SG VIR * - RPA_Journal' /&gt;&lt;webctrl id='zz7_ID_Logout' tag='SPAN' /&gt;" WaitForReady="COMPLETE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
