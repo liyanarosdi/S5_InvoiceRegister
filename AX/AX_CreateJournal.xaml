@@ -17,13 +17,13 @@
     <x:Property Name="io_ETD" Type="InArgument(x:String)" />
     <x:Property Name="io_PortName" Type="InArgument(x:String)" />
     <x:Property Name="io_StakeHolder" Type="InArgument(x:String)" />
-    <x:Property Name="io_ExistCode" Type="InArgument(x:String)" />
+    <x:Property Name="io_ExistCode" Type="InArgument(x:Boolean)" />
     <x:Property Name="out_Status" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1190,8660</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1140,8569</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AX_CreateJournal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -90,15 +90,15 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="903,8555" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap:VirtualizedContainerService.HintSize="903,8464" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="861,8463" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="861,8372" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="AX_CreateJournal" sap:VirtualizedContainerService.HintSize="823,6407" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="AX_CreateJournal" sap:VirtualizedContainerService.HintSize="823,6316" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="isVenInc" />
             <Variable x:TypeArguments="x:String" Name="GST1" />
@@ -474,9 +474,9 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <If Condition="[isJournal = True]" sap:VirtualizedContainerService.HintSize="781,1997" sap2010:WorkflowViewState.IdRef="If_2">
+          <If Condition="[isJournal = True]" sap:VirtualizedContainerService.HintSize="781,1906" sap2010:WorkflowViewState.IdRef="If_2">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="494,1849" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence sap:VirtualizedContainerService.HintSize="494,1758" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -576,9 +576,9 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear Journal Voucher" sap:VirtualizedContainerService.HintSize="452,757" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_5" RepeatForever="False">
+                <ui:OnUiElementAppear ContinueOnError="{x:Null}" FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="On Element Appear Journal Voucher" sap:VirtualizedContainerService.HintSize="452,666" sap2010:WorkflowViewState.IdRef="OnUiElementAppear_5" RepeatForever="False">
                   <ui:OnUiElementAppear.Body>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,581" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_8">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -615,42 +615,6 @@
                           </ui:Target>
                         </ui:Click.Target>
                       </ui:Click>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                        <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_38">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Close button" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
-                              <ui:Click.CursorPosition>
-                                <ui:CursorPosition Position="Center">
-                                  <ui:CursorPosition.OffsetX>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetX>
-                                  <ui:CursorPosition.OffsetY>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:CursorPosition.OffsetY>
-                                </ui:CursorPosition>
-                              </ui:Click.CursorPosition>
-                              <ui:Click.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e62c8320-b9eb-46ed-91e2-049e33e4fbb8" InformativeScreenshot="dcb574c06fb99d6f712288c2c31215e1" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Vendor invoice registration (1 - sppa)' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;" WaitForReady="COMPLETE">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                </ui:Target>
-                              </ui:Click.Target>
-                            </ui:Click>
-                          </Sequence>
-                        </ui:CommentOut.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:CommentOut>
                       <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window - Close vendor invoise registration" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseWindow_1" InformativeScreenshot="d026c70da40b8031bbd70d49d8cd4a03" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Vendor invoice registration (1 - sppa)' /&gt;" WaitForReady="COMPLETE" />
                     </Sequence>
                   </ui:OnUiElementAppear.Body>
@@ -857,8 +821,8 @@
                     <InArgument x:TypeArguments="x:String" x:Key="io_StakeHolder">
                       <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StakeHolder" />
                     </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_ExistCode">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ExistCode" />
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="io_ExistCode">
+                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_ExistCode" />
                     </InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
