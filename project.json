@@ -3,9 +3,10 @@
   "description": "Invoice Register",
   "main": "Main.xaml",
   "dependencies": {
+    "Microsoft.Activities": "[1.0.1]",
     "Microsoft.Office.Interop.Excel": "[15.0.4795.1000]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
-    "UiPath.Excel.Activities": "[2.8.6]",
+    "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.System.Activities": "[20.10.1]",
     "UiPath.UIAutomation.Activities": "[20.10.5]"
   },
@@ -13,7 +14,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "20.10.2.0",
-  "projectVersion": "1.0.52",
+  "projectVersion": "1.0.64",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
