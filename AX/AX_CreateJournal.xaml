@@ -23,7 +23,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1140,8569</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1256,8513</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AX_CreateJournal_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -82,7 +82,6 @@
       <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -90,15 +89,15 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap:VirtualizedContainerService.HintSize="903,8464" sap2010:WorkflowViewState.IdRef="Sequence_16">
+  <Sequence sap:VirtualizedContainerService.HintSize="903,8408" sap2010:WorkflowViewState.IdRef="Sequence_16">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="861,8372" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="861,8316" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="AX_CreateJournal" sap:VirtualizedContainerService.HintSize="823,6316" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="AX_CreateJournal" sap:VirtualizedContainerService.HintSize="823,6260" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="isVenInc" />
             <Variable x:TypeArguments="x:String" Name="GST1" />
@@ -190,9 +189,9 @@
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
           <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="781,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
-          <If Condition="[isVenInc = True]" sap:VirtualizedContainerService.HintSize="781,2948" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[isVenInc = True]" sap:VirtualizedContainerService.HintSize="781,2892" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,2800" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,2744" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -414,8 +413,8 @@
                     </ui:Target>
                   </ui:OnUiElementAppear.Target>
                 </ui:OnUiElementAppear>
-                <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text - Validate" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="ClickText_1" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="Validate">
-                  <ui:ClickText.CursorPosition>
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Main Validate button" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_39" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
                         <InArgument x:TypeArguments="x:Int32" />
@@ -424,17 +423,17 @@
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:CursorPosition.OffsetY>
                     </ui:CursorPosition>
-                  </ui:ClickText.CursorPosition>
-                  <ui:ClickText.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="33fd6ff7-f85c-451a-a79a-57ceeb650e84" InformativeScreenshot="1df4911f42bd3a7c15b22d878db017d7" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Journal voucher (1 - sppa) - Journal: Vend_Inv, journal number: *' /&gt;&lt;wnd aaname='LedgerJournalTransVendInvoice' cls='AxPaneWnd' /&gt;&lt;wnd aaname='Validate' cls='AxButton' /&gt;" WaitForReady="COMPLETE">
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3f1d254-e890-490d-be08-034163dfc8a5" InformativeScreenshot="2225ef033c8398c09570002e252b10ec" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Journal voucher (1 - sppa) - Journal: Vend_Inv, journal number: *' /&gt;&lt;wnd aaname='LedgerJournalTransVendInvoice' cls='AxPaneWnd' /&gt;&lt;wnd aaname='Validate' cls='AxButton' /&gt;" WaitForReady="INTERACTIVE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
                     </ui:Target>
-                  </ui:ClickText.Target>
-                </ui:ClickText>
-                <ui:ClickText ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" FormattedText="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Text - Validate" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="ClickText_2" KeyModifiers="None" MouseButton="BTN_LEFT" Occurrence="1" Text="Validate">
-                  <ui:ClickText.CursorPosition>
+                  </ui:Click.Target>
+                </ui:Click>
+                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Validate button" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
                     <ui:CursorPosition Position="Center">
                       <ui:CursorPosition.OffsetX>
                         <InArgument x:TypeArguments="x:Int32" />
@@ -443,15 +442,15 @@
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:CursorPosition.OffsetY>
                     </ui:CursorPosition>
-                  </ui:ClickText.CursorPosition>
-                  <ui:ClickText.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="33fd6ff7-f85c-451a-a79a-57ceeb650e84" InformativeScreenshot="7511eae1ace84e80e6cb1398dc4cdbfe" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='#32768' idx='*' /&gt;&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='12576' /&gt;" WaitForReady="COMPLETE">
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c3f1d254-e890-490d-be08-034163dfc8a5" InformativeScreenshot="7511eae1ace84e80e6cb1398dc4cdbfe" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='#32768' idx='*' /&gt;&lt;ctrl name='Context' role='popup menu' /&gt;&lt;ctrl automationid='12576' /&gt;" WaitForReady="INTERACTIVE">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
                     </ui:Target>
-                  </ui:ClickText.Target>
-                </ui:ClickText>
+                  </ui:Click.Target>
+                </ui:Click>
               </Sequence>
             </If.Then>
             <If.Else>
@@ -654,7 +653,7 @@
         <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="827,1746" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -776,54 +775,22 @@
                 <ui:CloseWindow TimeoutMS="{x:Null}" UseWindow="{x:Null}" DisplayName="Close Window - Close vendor invoise registration" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="CloseWindow_2" InformativeScreenshot="d026c70da40b8031bbd70d49d8cd4a03" Selector="&lt;rdp app='mstsc.exe' cls='TscShellContainerClass' title='192.168.18.38 - Remote Desktop Connection' /&gt;&lt;wnd app='ax32.exe' cls='AxTopLevelFrame' title='Vendor invoice registration (1 - sppa)' /&gt;" WaitForReady="COMPLETE" />
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke AX_Error workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="SharePoint\SharePoint_Error.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InOutArgument x:TypeArguments="x:String" x:Key="io_ErrorInfo">
-                      <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="io_ErrorInfo" />
-                    </InOutArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedAmount">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedAmount" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedProNum">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedProNum" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedDate">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedDate" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedInc">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedInc" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCurr">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedCurr" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_GST">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_GST" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedName">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCode">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedCode" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_VedAcc">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_VedAcc" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_Name">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_Name" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_DataEmpty">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_DataEmpty" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_ETD">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_ETD" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_PortName">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_PortName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="io_StakeHolder">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="io_StakeHolder" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:Boolean" x:Key="io_ExistCode">
-                      <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="io_ExistCode" />
-                    </InArgument>
+                    <InOutArgument x:TypeArguments="x:String" x:Key="io_ErrorInfo">[io_ErrorInfo]</InOutArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedAmount">[io_VedAmount]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedProNum">[io_VedProNum]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedDate">[io_VedDate]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedInc">[io_VedInc]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCurr">[io_VedCurr]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_GST">[io_GST]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedName">[io_VedName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedCode">[io_VedCode]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_VedAcc">[io_VedAcc]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_Name">[io_Name]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_DataEmpty">[io_DataEmpty]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_ETD">[io_ETD]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_PortName">[io_PortName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="io_StakeHolder">[io_StakeHolder]</InArgument>
+                    <InArgument x:TypeArguments="x:Boolean" x:Key="io_ExistCode">[io_ExistCode]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </Sequence>
